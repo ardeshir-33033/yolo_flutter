@@ -15,7 +15,7 @@ import 'dart:math';
   for (int i = 0; i < 8400; i++) {
     double bestScore = 0;
     int bestCls = -1;
-    for (int j = 4; j < 84; j++) {
+    for (int j = 4; j < 5; j++) {
       double clsScore = rawOutput[j][i];
       if (clsScore > bestScore) {
         bestScore = clsScore;

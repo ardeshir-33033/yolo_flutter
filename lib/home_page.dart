@@ -17,19 +17,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   static const inModelWidth = 640;
   static const inModelHeight = 640;
-  static const numClasses = 80;
+  static const numClasses = 5;
 
   static const double maxImageWidgetHeight = 400;
 
   final YoloModel model = YoloModel(
-    'assets/models/yolov8n.tflite',
+    'assets/models/best_float16.tflite',
     inModelWidth,
     inModelHeight,
     numClasses,
   );
   File? imageFile;
 
-  double confidenceThreshold = 0.4;
+  double confidenceThreshold = 0.6;
   double iouThreshold = 0.1;
   bool agnosticNMS = false;
 
@@ -78,9 +78,9 @@ class _HomePageState extends State<HomePage> {
             box[1] * resizeFactor,
             box[2] * resizeFactor,
             box[3] * resizeFactor,
-            labels[boxClass],
+            labels[0],
             scores[i],
-            bboxesColors[boxClass]),
+            bboxesColors[0]),
       );
     }
 
